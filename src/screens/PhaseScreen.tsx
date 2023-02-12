@@ -7,8 +7,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {resetPhase, selectPhaseList, toggleTask} from '../redux/phase';
 import {StackNavigationProp} from '../router/MainRouter';
 import {Checkbox, Text, useTheme} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/Entypo';
+import Entypo from 'react-native-vector-icons/Entypo';
 import styled from 'styled-components/native';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const ItemRow = styled.Pressable`
   flex-direction: row;
@@ -32,7 +34,7 @@ export const BadgeView = styled.View`
   height: 35px;
 `;
 
-export const CheckIcon = styled(Icon).attrs({
+export const CheckIcon = styled(Entypo).attrs({
   name: 'check',
   size: 24,
 })`
@@ -76,7 +78,7 @@ export function PhaseScreen() {
   useEffect(() => {
     setOptions({
       headerRight: () => (
-        <Icon
+        <Ionicons
           name="reload-circle-outline"
           size={24}
           onPress={handleResetPress}
