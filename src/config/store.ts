@@ -8,16 +8,21 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
+import {phase} from '../redux';
+import {Api} from '../service/ApiService';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    phase,
+    [Api.reducerPath]: Api.reducer,
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoreActions: true,
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(Api.middleware),
 });
 
 export const persistor = persistStore(store);
