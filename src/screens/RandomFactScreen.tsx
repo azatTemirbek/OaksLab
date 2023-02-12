@@ -1,5 +1,5 @@
 import React from 'react';
-import {ActivityIndicator, Card} from 'react-native-paper';
+import {ActivityIndicator, Card, Text} from 'react-native-paper';
 import {useGerRandomFactQuery} from '../service/ApiService';
 
 const RandomFactScreen = (): JSX.Element => {
@@ -7,7 +7,12 @@ const RandomFactScreen = (): JSX.Element => {
   return isLoading ? (
     <ActivityIndicator />
   ) : (
-    <Card.Title title={`Source: ${data?.source}`} subtitle={data?.text} />
+    <Card style={{margin: 16}}>
+      <Card.Content>
+        <Text variant="titleLarge">{data?.source}</Text>
+        <Text variant="bodyMedium">{data?.text}</Text>
+      </Card.Content>
+    </Card>
   );
 };
 
