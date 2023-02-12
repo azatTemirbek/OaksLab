@@ -33,6 +33,7 @@ const phaseSlice = createSlice({
     ) {
       const {phaseIndex, taskIndex} = action.payload;
       if (isCurrentPhaseComplete(state, phaseIndex)) {
+        // if current phase is complete, toggle task and reset all subsequent phases
         state.phases[phaseIndex].tasks[taskIndex].isComplete =
           !state.phases[phaseIndex].tasks[taskIndex].isComplete;
         state.phases
@@ -41,6 +42,7 @@ const phaseSlice = createSlice({
             phase.tasks.forEach(task => (task.isComplete = false)),
           );
       } else if (isPreviousPhaseComplete(state, phaseIndex)) {
+        // if previous phase is complete, toggle task
         state.phases[phaseIndex].tasks[taskIndex].isComplete =
           !state.phases[phaseIndex].tasks[taskIndex].isComplete;
       }
