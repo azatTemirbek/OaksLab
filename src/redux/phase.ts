@@ -45,11 +45,14 @@ const phaseSlice = createSlice({
           !state.phases[phaseIndex].tasks[taskIndex].isComplete;
       }
     },
+    resetPhase(state) {
+      state.phases = initialState.phases;
+    },
   },
 });
 
 export const selectPhaseList = (state: RootState) => state.phase.phases;
-export const {toggleTask} = phaseSlice.actions;
+export const {toggleTask, resetPhase} = phaseSlice.actions;
 
 const phasePersistConfig = {
   key: 'phase',
