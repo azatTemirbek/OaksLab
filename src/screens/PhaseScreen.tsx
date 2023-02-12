@@ -3,14 +3,13 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useCallback, useEffect, useMemo} from 'react';
 import {SectionList} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {resetPhase, selectPhaseList, toggleTask} from '../redux/phase';
-import {StackNavigationProp} from '../router/MainRouter';
 import {Checkbox, Text, useTheme} from 'react-native-paper';
 import Entypo from 'react-native-vector-icons/Entypo';
-import styled from 'styled-components/native';
-
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useDispatch, useSelector} from 'react-redux';
+import styled from 'styled-components/native';
+import {resetPhase, selectPhaseList, toggleTask} from '../redux/phase';
+import {StackNavigationProp} from '../router/MainRouter';
 
 export const ItemRow = styled.Pressable`
   flex-direction: row;
