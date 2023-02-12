@@ -12,4 +12,4 @@ Developed with React Native 0.71.2
 - [x] If the startup accomplishes all tasks in the phase, it’s marked as done and unlocks the next phase.
 - [x] Tasks cannot be marked as completed unless all tasks in the previous phase were completed.
 - [x] Propose and implement a solution how to reopen (undo) a task. (when previous phase task is reopened all tasks in the in subsequent phases are also reopened).
-- [x] started at 12-Feb-2023 22:00  finished at 12-Feb-2023 23:53
+- [x] started at 12-Feb-2023 22:00 completed at 12-Feb-2023 23:53
