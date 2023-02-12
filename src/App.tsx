@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-function HomeScreen() {
+function PhaseScreen() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
@@ -11,16 +11,29 @@ function HomeScreen() {
   );
 }
 
+function RandomFactScreen() {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>RandomFact Screen</Text>
+    </View>
+  );
+}
+
 const Stack = createNativeStackNavigator();
 
-function App() {
+function Router() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Phase" component={PhaseScreen} />
+        <Stack.Screen name="RandomFact" component={RandomFactScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
+}
+
+function App() {
+  return <Router />;
 }
 
 export default App;
