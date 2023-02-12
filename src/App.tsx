@@ -1,11 +1,11 @@
-import * as React from 'react';
-import {MainRouter} from './router/MainRouter';
-import {Provider} from 'react-redux';
-import {store, persistor} from './config/store';
-import {PersistGate} from 'redux-persist/integration/react';
+import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
-import {theme} from './config/theme';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 import {ThemeProvider} from 'styled-components/native';
+import {persistor, store} from './config/store';
+import {theme} from './config/theme';
+import {MainRouter} from './router/MainRouter';
 
 function App(): JSX.Element {
   return (
