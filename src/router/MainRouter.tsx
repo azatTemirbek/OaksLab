@@ -1,11 +1,22 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from '@react-navigation/native-stack';
 import {PhaseScreen} from '../screens/PhaseScreen';
-import {RandomFactScreen} from '../screens/RandomFactScreen';
+import RandomFactScreen from '../screens/RandomFactScreen';
+
+type RootStackParamList = {
+  Phase: undefined;
+  RandomFact: undefined;
+};
+
+export type StackNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function MainRouter() {
-  const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
       <Stack.Navigator>
