@@ -1,12 +1,14 @@
-import * as React from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
+import {ActivityIndicator, Card} from 'react-native-paper';
+import {useGerRandomFactQuery} from '../service/ApiService';
 
-export function RandomFactScreen() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>RandomFact Screen</Text>
-    </View>
+const RandomFactScreen = (): JSX.Element => {
+  const {data, isLoading} = useGerRandomFactQuery();
+  return isLoading ? (
+    <ActivityIndicator />
+  ) : (
+    <Card.Title title={`Source: ${data?.source}`} subtitle={data?.text} />
   );
-}
+};
 
 export default RandomFactScreen;
