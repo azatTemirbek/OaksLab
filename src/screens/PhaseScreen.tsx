@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import { resetPhase, selectPhaseList, toggleTask } from "../redux/phase";
 import { MdCheck } from "react-icons/md";
 
